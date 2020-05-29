@@ -1,0 +1,519 @@
+/* Подключаем локально шрифты */
+@font-face {
+  font-family: "Philosopher";
+  src: local("Philosopher"),
+    url("../fonts/Philosopher-Regular.woff2") format("woff2"),
+    url("../fonts/Philosopher-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Philosopher-Bold";
+  src: local("Philosopher-Bold"),
+    url("../fonts/Philosopher-Bold.woff2") format("woff2"),
+    url("../fonts/Philosopher-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Philosopher-Italic";
+  src: local("Philosopher-Italic"),
+    url("../fonts/Philosopher-Italic.woff2") format("woff2"),
+    url("../fonts/Philosopher-Italic.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria-Medium";
+  src: local("Geometria-Medium"),
+    url("../fonts/Geometria-Medium.woff2") format("woff2"),
+    url("../fonts/Geometria-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria-Light";
+  src: local("Geometria-Light"),
+    url("../fonts/Geometria-Light.woff2") format("woff2"),
+    url("../fonts/Geometria-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria-HeavyItalic";
+  src: local("Geometria-HeavyItalic"),
+    url("../fonts/Geometria-HeavyItalic.woff2") format("woff2"),
+    url("../fonts/Geometria-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria-Heavy";
+  src: local("Geometria-Heavy"),
+    url("../fonts/Geometria-Heavy.woff2") format("woff2"),
+    url("../fonts/Geometria-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Общие стили */
+html {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Philosopher-Bold";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.12;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.header {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 577px;
+  padding-top: 97px;
+  padding-right: 80px;
+  padding-left: 80px;
+  padding-bottom: 126px;
+}
+
+.header__symbol_a {
+  position: absolute;
+  top: 34px;
+  left: 34px;
+}
+
+.header__burger {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  background-image: url("../img/wreath.png");
+  background-size: cover;
+  top: 100px;
+  right: 80px;
+  z-index: 10;
+}
+
+.header__burger:hover {
+  opacity: 0.5;
+}
+
+.header__test {
+  position: absolute;
+  opacity: 0.4;
+  color: #000000;
+  font-family: "Geometria-Light";
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.44px;
+  text-transform: lowercase;
+  transform: rotate(270deg);
+  top: 394px;
+  left: -29px;
+}
+
+.header h1 {
+  position: absolute;
+  color: #ffffff;
+  font-family: "Philosopher";
+  font-size: 140px;
+  font-weight: 400;
+  letter-spacing: 50.4px;
+  top: 324px;
+  left: 15.5%;
+  z-index: 10;
+}
+
+@media (max-width: 1200px) {
+  .header h1 {
+    font-size: 100px;
+    letter-spacing: 40px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header h1 {
+    font-size: 80px;
+    letter-spacing: 30px;
+  }
+}
+
+.header p {
+  position: absolute;
+  opacity: 0.5;
+  color: #000000;
+  font-family: "Philosopher-Italic";
+  font-size: 9px;
+  text-transform: lowercase;
+  transform: rotate(270deg);
+  top: 480px;
+  left: 19.5%;
+  z-index: 8;
+}
+
+.header p::after {
+  position: absolute;
+  content: "";
+  width: 177px;
+  height: 282px;
+  background-image: url("../img/border-icon.png");
+  transform: rotate(90deg);
+  top: -24px;
+  left: 34px;
+}
+
+.header__number_1 {
+  position: absolute;
+  color: #000000;
+  font-family: "Geometria-Light";
+  font-size: 14px;
+  font-weight: 300;
+  top: 182px;
+  left: 15.4%;
+  z-index: 8;
+}
+
+.header__number_3 {
+  position: absolute;
+  color: #000000;
+  font-family: "Geometria-Light";
+  font-size: 14px;
+  font-weight: 300;
+  top: 263px;
+  left: 15.4%;
+  z-index: 8;
+}
+
+.header__letter_a,
+.header__letter_f,
+.header__letter_g {
+  position: absolute;
+  color: transparent;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Geometria-Medium";
+  font-size: 80px;
+  font-weight: 500;
+  text-transform: uppercase;
+  z-index: 4;
+}
+
+.header__letter_a {
+  top: 43px;
+  right: 27.6%;
+}
+
+.header__letter_f {
+  top: 126px;
+  right: 16.4%;
+  z-index: 1;
+}
+
+.header__letter_g {
+  top: 203px;
+  right: 21.8%;
+}
+
+.header__gallery {
+  position: relative;
+  list-style: none;
+  min-height: 525px;
+  width: 100%;
+}
+
+.header__gallery_item {
+  position: absolute;
+  max-width: 800px;
+  width: 100%;
+  height: 525px;
+  top: 0;
+  box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
+  transition: 2s;
+}
+
+.header__gallery_item::before {
+  position: absolute;
+  content: "";
+  max-width: 800px;
+  min-width: 100%;
+  height: 525px;
+  background-color: #f7e611;
+  opacity: 0.8;
+  top: 0;
+}
+
+.header__gallery_active {
+  max-width: 860px;
+  height: 490px;
+  top: 87px;
+  right: 0;
+  z-index: 1;
+}
+
+.header__gallery_active img {
+  height: 490px;
+}
+
+.header__gallery_active::before {
+  height: 490px;
+}
+
+.header__ural {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  top: 32px;
+  left: 86px;
+  color: #ffffff;
+  font-family: "Geometria-Light";
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 2.14px;
+}
+
+.header__number_51 {
+  position: absolute;
+  opacity: 0.5;
+  color: #000000;
+  font-family: "Geometria-Heavy";
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2.8px;
+  transform: rotate(270deg);
+  top: 32px;
+  right: 36%;
+}
+
+.header__switch {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 96px;
+  height: 341px;
+  box-shadow: 0 0 88px rgba(0, 0, 0, 0.1);
+  background-color: #f7e611;
+  top: 256px;
+  right: 19.2%;
+  z-index: 5;
+  padding: 21px;
+}
+
+.header__day {
+  position: relative;
+  font-family: "Geometria-HeavyItalic";
+  font-size: 45px;
+  font-weight: 800;
+  margin-bottom: -4px;
+}
+
+.header__day::after {
+  position: absolute;
+  content: "";
+  width: 17px;
+  height: 3px;
+  background-color: #000000;
+  bottom: 4px;
+  left: 55px;
+}
+
+.header__month {
+  font-family: "Geometria-HeavyItalic";
+  font-size: 17px;
+  font-weight: 800;
+  padding-left: 54px;
+}
+
+.header__arrow_left {
+  position: absolute;
+  top: 228px;
+  left: -40px;
+}
+
+.header__arrow_right {
+  position: absolute;
+  top: 228px;
+  right: -40px;
+}
+
+.header__arrow_left:hover,
+.header__arrow_right:hover {
+  opacity: 0.5;
+}
+
+.header__wreath {
+  position: relative;
+  width: 213px;
+  height: 124px;
+  border-bottom: 11px solid #f7e611;
+  background-image: url("../img/wreath-big.png");
+  background-repeat: no-repeat;
+  background-size: 160px 112px;
+  background-position: bottom;
+  margin: 0 auto;
+  margin-top: -40px;
+  z-index: 15;
+}
+
+.header__title::before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/triangle-with-fill.png");
+  bottom: 83px;
+  left: 13.3%;
+}
+
+.header__title::after {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/triangle-without-fill.png");
+  bottom: -7px;
+  left: 31.3%;
+}
+
+.header__title_a,
+.header__title_f,
+.header__title_f-2,
+.header__title_i,
+.header__title_n,
+.header__title_a-2,
+.header__title_g,
+.header__title_e {
+  position: absolute;
+  color: #000000;
+  font-family: "Philosopher-Bold";
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.header__title_a {
+  bottom: 29px;
+  left: 18.5%;
+}
+
+.header__title_f {
+  bottom: 64px;
+  left: 23%;
+}
+
+.header__title_f-2 {
+  bottom: 20px;
+  left: 27.5%;
+}
+
+.header__title_i {
+  bottom: 50px;
+  left: 31.6%;
+}
+
+.header__title_n {
+  bottom: 9px;
+  left: 36.2%;
+}
+
+.header__title_a-2 {
+  bottom: 51px;
+  left: 64.5%;
+}
+
+.header__title_a-2::after {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/triangle-without-fill.png");
+  bottom: -29px;
+  left: 36px;
+}
+
+.header__title_g {
+  bottom: 44px;
+  left: 71.6%;
+}
+
+.header__title_e {
+  bottom: 16px;
+  left: 79.4%;
+}
+
+.header__title_e::after {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/triangle-with-fill.png");
+  bottom: 26px;
+  left: 57px;
+}
+
+
